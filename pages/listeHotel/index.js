@@ -1,18 +1,18 @@
 import Link from "next/link";
 import styled from "styled-components";
-import styles from "../../../styles/Home.module.css"
+import styles from "@/styles/style.module.css"
 import { IoMdAdd } from "react-icons/io";
-import hotel1 from "../../../public/hotel1.svg";
-import hotel2 from "../../../public/hotel2.svg";
-import hotel3 from "../../../public/hotel3.svg";
-import hotel4 from "../../../public/hotel4.svg";
-import hotel5 from "../../../public/hotel5.svg";
-import hotel6 from "../../../public/hotel6.svg";
-import hotel7 from "../../../public/hotel7.svg";
-import hotel8 from "../../../public/hotel8.svg";
-import CardHotel from "../cardhotel";
-import Sidebar from "..";
-import Header from "@/pages/header";
+import hotel1 from "@/public/hotel1.svg";
+import hotel2 from "@/public/hotel2.svg";
+import hotel3 from "@/public/hotel3.svg";
+import hotel4 from "@/public/hotel4.svg";
+import hotel5 from "@/public/hotel5.svg";
+import hotel6 from "@/public/hotel6.svg";
+import hotel7 from "@/public/hotel7.svg";
+import hotel8 from "@/public/hotel8.svg";
+import CardHotel from "@/pages/listeHotel/cardHotel/cardHotel";
+import Sidebar from "@/pages/sidebar/sidebar";
+import Header from "@/pages/header/header";
 
 export default function ListeHotel() {
     const  CardDataHotel = [

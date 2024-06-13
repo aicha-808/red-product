@@ -1,0 +1,31 @@
+
+ .home{
+    text-align: center;
+  }
+  .icone{
+    margin:0.6rem auto;
+  }
+  .linkdashboard{
+    text-decoration: none;
+    color: #4D5154;
+    margin-left: 10px;
+  }
+  .dashboardH{
+    text-decoration: none;
+    color: #4D5154;
+    font-size: 18px;
+    font-weight: 500;
+   
+  }
+  .linkhotel{
+    text-decoration: none;
+    color:#FFFFFF;
+    margin-left: 10px;
+  }
+  .adhotel{
+    text-decoration: none;
+   
+  }
+  .profile{border-radius: 100%;
+   
+  }

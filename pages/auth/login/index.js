@@ -3,6 +3,8 @@ import styles from "@/styles/auth.module.css";
 import Link from "next/link";
 import {Conteneur,BrandName, ContBrandName, Connect, ForgotMp,StyledForm, Titre, StyledButton, StyledInput, StyledLabel, StyledCheckbox  } from "@/pages/styleComponent/StyleForm";
 import {AuthContext} from "../auhContext";
+import { useRouter } from "next/router";
+
 
 export default function Login() {
 
@@ -17,18 +19,18 @@ export default function Login() {
     
       const handleChange = (e) =>
         setValues({ ...values, [e.target.name]: e.target.value });
-        
+
+      const routerDahboard = useRouter();
+
       const handleSubmit = async (e) => {
         e.preventDefault();
-        await login(email, password);
-        // try {
-        //   const response = await axios.get('http://localhost:5000/api/adusers', {email, password});
-        //   // setToken(response.data.token);
-        //   console.log(response.data);
-        //   setError(false)
-        // } catch (error) {
-        //   console.error(error);
-        // }
+        try {
+          await login(email, password);
+          routerDahboard.push('/dashboard');
+        } catch (error) {
+          console.log("Error:", error);
+        }
+        
       }
 
        return(

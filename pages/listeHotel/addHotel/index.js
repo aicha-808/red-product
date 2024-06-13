@@ -1,23 +1,7 @@
-import {StyledForm, StyledButton, StyledInput, StyledLabel, StyledCheckbox, Sty} from "../../styleComponent/StyleForm"
+import {Conteneur,BrandName,Erreur, ContBrandName, StyledForm, StyledButton, StyledInput, StyledLabel} from "../../styleComponent/StyleForm"
 
 export default function AddHotel() {
 
-    // styled-components
-    const Conteneur = styled.section`
-    padding: 2rem;
-    background-color: #494C4F;
-    `
-    const ContBrandName = styled.div`
-    text-align: center;
-    `
-    const BrandName = styled.div`
-    font-size: 25px;
-    margin-left: 2px;
-    color: #FFFFFF;
-    `
-    const Erreur = styled.p `
-    text-align: center;
-    `
    
     return(
         <Conteneur>

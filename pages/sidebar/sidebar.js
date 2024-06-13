@@ -1,11 +1,11 @@
 import React from 'react';
 import Link from "next/link"
 import styled from 'styled-components';
-import styles from "../../styles/style.module.css";
+import styles from "@/styles/style.module.css";
 import { MdDashboard } from "react-icons/md";
 import { FaHotel } from "react-icons/fa";
 import Image from "next/image";
-import profile from "../../public/profile.png"
+import profile from "@/public/profile.png"
 
 
 

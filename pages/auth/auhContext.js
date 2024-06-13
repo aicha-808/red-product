@@ -14,14 +14,15 @@ const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
-    const response = await axios.post('http://localhost:5000/api/adusers', {email, password});
+    const response = await axios.post('http://localhost:5000/api/auth/login', {email, password});
     setToken(response.data.token);
     localStorage.setItem('token', response.data.token);
+    console.log('utilisateur connecté avec succes');
   };
 
   const register = async (name, email, password) => {
     try {
-      const response = await axios.post('http://localhost:5000/api/adusers', {name, email, password});
+      const response = await axios.post('http://localhost:5000/api/auth/register', {name, email, password});
       console.log(response.data);
     } catch (error) {
       console.log(error);

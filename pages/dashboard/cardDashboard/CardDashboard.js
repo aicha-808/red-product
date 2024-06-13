@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import styles from '../../../styles/style.module.css'
+import styles from '@/styles/style.module.css'
 
 const CardContainer = styled.div`
     width: 300px;

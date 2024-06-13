@@ -3,14 +3,14 @@ import Link from "next/link";
 import { useSession, signOut } from "next-auth/react";
 import { FaSignOutAlt,FaRegBell } from "react-icons/fa";
 import { IoSearchOutline } from "react-icons/io5";
-import styles from "../../styles/Home.module.css";
+import styles from "@/styles/style.module.css";
 import Image from "next/image";
-import profile from "../../public/profile.png"
+import profile from "@/public/profile.png"
 
 
 export default function Header() {
 
-    const { data } = useSession();
+    // const { data } = useSession();
 
     // style-components
     const Navbar = styled.nav`
@@ -85,12 +85,8 @@ export default function Header() {
                 <Profil>
                 <Image src={profile} alt="Profil" width={15} height={15}  className={styles.profile}/>
                 </Profil>
-                { data?.user ? (
                     <FaSignOutAlt size={15} onClick={signOut} />
-
-                ):
                 <Link className={styles.dashboardH} href="/inscription">I</Link>
-                }
             </WrapperLeft>
         </Navbar>  
     )

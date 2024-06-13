@@ -1,7 +1,7 @@
 import styled from "styled-components"
-import CardDashboard from "./card"
-import Header from "../header/Header";
-import Sidebar from "../sidebar/index"
+import CardDashboard from "./cardDashboard/CardDashboard"
+import Header from "../header/header";
+import Sidebar from "../sidebar/sidebar"
 import { FaEnvelopeOpen } from "react-icons/fa6";
 import { HiUsers  } from "react-icons/hi";
 import { TbLetterP } from "react-icons/tb";
