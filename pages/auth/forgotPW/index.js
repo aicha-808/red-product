@@ -1,41 +1,10 @@
 import React from "react";
 import styled from 'styled-components';
-import {Titre, StyledButton, StyledForm, StyledInput, StyledLabel, StyledForgetPw } from "../../styleComponent/StyleForm";
+import {Link,StyledLink,Titre, StyledButton, StyledForm, StyledInput, StyledLabel, StyledForgetPw } from "../../styleComponent/StyleForm";
 
 
 export default function ForgetMP() {
 
-    const Conteneur = styled.section`
-    padding: 5rem;
-    background-color: #494C4F;
-    `
-    const ContBrandName = styled.div`
-    text-align: center;
-    `
-    const BrandName = styled.div`
-    font-size: 25px;
-    margin-left: 2px;
-    color: #FFFFFF;
-    `
-    const Link = ({ className, children }) => (
-      <>
-      <a className={className}>
-        {children}
-      </a>  
-      </>
-    );
-    
-    const Styledpara = styled(Link)`
-    color: red;
-    text-align: center;
-  `;
-    const StyledLink = styled(Link)`
-      color: #FCC100;
-      font-weight: bold;
-      text-align: center;
-    `;
-
-    // fonctionnalités-------
     const [email, setEmail] = useState("");
  
     const [error, setError] = useState(null);

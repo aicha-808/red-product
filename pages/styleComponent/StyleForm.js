@@ -79,5 +79,17 @@ export const StyledButton = styled.button`
   &:enabled {
     opacity: 1.0;
   }
-  
 `
+export const Link = ({ className, children }) => (
+  <>
+  <a className={className}>
+    {children}
+  </a>  
+  </>
+);
+
+export const StyledLink = styled(Link)`
+   color: #FCC100;
+      font-weight: bold;
+      text-align: center;
+    `;
