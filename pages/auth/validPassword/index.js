@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import axios from '../utils/axios';
+import axios from 'axios';
 
 const ResetPassword = () => {
   const router = useRouter();

@@ -2,14 +2,14 @@ import React, {useState} from "react";
 import {Conteneur,ContBrandName,BrandName,Link,Titre, StyledButton, StyledForm, StyledInput, StyledLabel, StyledForgetPw } from "../../styleComponent/StyleForm";
 import axios from 'axios';
 import styles from '@/styles/auth.module.css'
-// import { useRouter } from "next/router";
+import { useRouter } from "next/router";
 
 export default function ForgetMP() {
   
     const [email, setEmail] = useState("");
  
     const [error, setError] = useState('');
-    // const routerVlidePw = useRouter()
+    const routerVlidePw = useRouter()
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -17,7 +17,8 @@ export default function ForgetMP() {
           const response = await axios.post('http://localhost:5000/api/auth/forgot-password', { email });
           setEmail(response.data.message);
           console.log(response.data);
-          // routerVlidePw.push('/auth/validPassword');
+          routerVlidePw.push('/auth/validPassword');
+
         } catch (error) {
           console.error('Error sending reset email:', error);
           setError('Error sending reset email');
