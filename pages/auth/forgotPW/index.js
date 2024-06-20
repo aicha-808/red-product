@@ -1,17 +1,28 @@
-import React from "react";
-import styled from 'styled-components';
-import {Link,StyledLink,Titre, StyledButton, StyledForm, StyledInput, StyledLabel, StyledForgetPw } from "../../styleComponent/StyleForm";
-
+import React, {useState} from "react";
+import {Conteneur,ContBrandName,BrandName,Link,Titre, StyledButton, StyledForm, StyledInput, StyledLabel, StyledForgetPw } from "../../styleComponent/StyleForm";
+import axios from 'axios';
+import styles from '@/styles/auth.module.css'
+// import { useRouter } from "next/router";
 
 export default function ForgetMP() {
-
+  
     const [email, setEmail] = useState("");
  
-    const [error, setError] = useState(null);
+    const [error, setError] = useState('');
+    // const routerVlidePw = useRouter()
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-    }
+        try {
+          const response = await axios.post('http://localhost:5000/api/auth/forgot-password', { email });
+          setEmail(response.data.message);
+          console.log(response.data);
+          // routerVlidePw.push('/auth/validPassword');
+        } catch (error) {
+          console.error('Error sending reset email:', error);
+          setError('Error sending reset email');
+        }
+      };
     
 
     return(
@@ -25,12 +36,12 @@ export default function ForgetMP() {
                  sur la façon de modifier votre mot de passe.</StyledForgetPw>
                 <StyledLabel>Votre e-mail</StyledLabel>
                 <StyledInput type="email"  onChange={(e) => setEmail(e.target.value)}></StyledInput>
-                <StyledButton>Envoyer</StyledButton>
+                <StyledButton type="submit">Envoyer</StyledButton>
             </StyledForm>
-            <Link>Revenir à la
-               <StyledLink href='/login'> connexion</StyledLink> 
-
-            </Link>
+            {error && <p>{error}</p>}
+            <p className={styles.fwp}>Revenir à la
+               <Link href='/auth/login' className={styles.fwp}> connexion</Link> 
+            </p>
         </Conteneur>
 
     )

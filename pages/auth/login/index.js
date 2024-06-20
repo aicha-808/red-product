@@ -52,7 +52,7 @@ export default function Login() {
                 <StyledButton type="submit">Se connecter</StyledButton>
             </StyledForm>
             <ForgotMp>
-                <Link href='/forgotMp' className={styles.fpm}>Mot de passe oublié?</Link>
+                <Link href='/auth/forgotPW' className={styles.fpm}>Mot de passe oublié?</Link>
             </ForgotMp>
             <Connect>Vous n'avez pas de compte?
                <Link href='/auth/register' className={styles.fpm}> S'inscrire</Link> 
