@@ -2,7 +2,7 @@ import React, {useState, useContext} from "react";
 import styles from "@/styles/auth.module.css";
 import Link from "next/link";
 import styled from 'styled-components';
-import {AuthContext} from "../context/auhContext";
+import {AuthContext} from "../../auth/context/auhContext";
 import { useRouter } from "next/router";
 
 
