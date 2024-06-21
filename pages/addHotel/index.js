@@ -91,42 +91,51 @@ const FileName = styled.span`
 
 export default function AddHotel() {
 
-  const [fileName, setFileName] = React.useState('');
+  const [imgUrl, setImgUrl] = useState('');
+  const [ titre, setTitre] = useState('');
+  const [adresse, setAdresse] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [prix, setPrix] = useState('');
+  const [devise, setDevise] = useState('');
 
+  const emptyInput = () => {
+    setAdresse('');
+    setDevise('');
+    setEmail('');
+    setImgUrl('');
+    setPhone('');
+    setTitre('');
+    setPrix('');
+  }
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      setFileName(file.name);
+      setImgUrl(file.name);
     } else {
-      setFileName('');
+      setImgUrl('');
     }
   }
 
-    const [values, setValues] = useState({
-        name: "",
-        adresse:"",
-        email: "",
-        phone:"",
-        price:"",
-        devise:"",
+const handleSubmit = async(e) => {
+    e.preventDefault();
+    try {
+    const response = await axios.post('http://localhost:5000/api/addHotel', {
+        imgUrl,
+        adresse,
+        titre,
+        email,
+        phone,
+        prix,
+        devise,
     });
-        const { name,adresse, email,phone, price, devise } = values;
-
-        const handleChange = (e) => {
-            setValues({ ...values, [e.target.name]: e.target.value });
-        }
-
-        const handleSubmit = async(e) => {
-           e.preventDefault();
-           try {
-            const response = await axios.post('http://localhost:5000/api/addHotel');;
-            console.log(response.data);
-            } catch (error) {
-            console.log(error);
-            }
-             setValues('');
-            setFileName('');
-        }
+    console.log(response.data);
+    } catch (error) {
+    console.log(error);
+    }
+    
+    emptyInput();
+}
                
    
     return(
@@ -137,17 +146,17 @@ export default function AddHotel() {
             <StyledForm  onSubmit={handleSubmit}>
                 <Titre>Créer un nouveau hôtel</Titre>
                 <StyledLabel  >Nom de l'hôtel</StyledLabel>
-                <StyledInput type="text" name="name" value={name} onChange={handleChange} required></StyledInput>
+                <StyledInput type="text" name=" titre" value={ titre} onChange={(e) => setTitre(e.target.value)} required></StyledInput>
                 <StyledLabel  >Adresse</StyledLabel>
-                <StyledInput type="text" name="adresse" value={adresse} onChange={handleChange} required></StyledInput>
+                <StyledInput type="text" name="adresse" value={adresse} onChange={(e) => setAdresse(e.target.value)}></StyledInput>
                 <StyledLabel>E-mail</StyledLabel>
-                <StyledInput type="email" name="email" value={email} onChange={handleChange} required></StyledInput>
+                <StyledInput type="email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} required></StyledInput>
                 <StyledLabel>Numero de téléphone</StyledLabel>
-                <StyledInput type="number" name="phone" value={phone} onChange={handleChange} required></StyledInput>
+                <StyledInput type="number" name="phone" value={phone} onChange={(e) => setPhone(e.target.value)} required></StyledInput>
                 <StyledLabel>Prix par nuit</StyledLabel>
-                <StyledInput type="text" name="price" value={price} onChange={handleChange} required></StyledInput>
+                <StyledInput type="text" name="prix" value={prix} onChange={(e) => setPrix(e.target.value)} required></StyledInput>
                 <StyledLabel>Devise</StyledLabel>
-                <select value={devise} onChange={handleChange}>
+                <select value={devise} onChange={(e) => setDevise(e.target.value)}>
                     <option >F XOF</option>
                     <option>Euro</option>
                     <option>Dollar</option>
@@ -156,7 +165,7 @@ export default function AddHotel() {
                 <FileInputContainer>
                     <FileLabel htmlFor="file-input">Ajouter une photo</FileLabel>
                     <HiddenFileInput id="file-input" type="file" onChange={handleFileChange}  placeholder="ajouter une photo"  />
-                    <FileName>{fileName}</FileName>
+                    <FileName>{imgUrl}</FileName>
                 </FileInputContainer>
                 <StyledButton type="submit">Enregistrer</StyledButton>
             </StyledForm>
