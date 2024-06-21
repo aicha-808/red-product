@@ -8,10 +8,6 @@ import Image from "next/image";
 import profile from "@/public/profile.png"
 
 
-export default function Header() {
-
-    // const { data } = useSession();
-
     // style-components
     const Navbar = styled.nav`
         display: flex;
@@ -69,6 +65,10 @@ export default function Header() {
     border-radius: 100%;
     `
    
+
+export default function Header() {
+
+    // const { data } = useSession();
 
     return(
         <Navbar>

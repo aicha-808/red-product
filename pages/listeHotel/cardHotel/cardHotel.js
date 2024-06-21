@@ -48,8 +48,7 @@ const  CardHotel = ({ titre,adresse,prix, imgUrl} ) => {
     return ( 
         <CardContainer>
             <CardImage  >
-                {imgUrl}
-                {/* <Image src ={imgUrl} alt="hotel" width={250} height={196} /> */}
+                <Image src ={imgUrl} alt="hotel" width={250} height={196} />
             </CardImage>
             <CardBody>
                 <Adresse>{adresse}</Adresse> 

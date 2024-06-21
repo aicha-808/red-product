@@ -27,7 +27,7 @@ const AuthProvider = ({ children }) => {
     } catch (error) {
       console.log(error);
   }
-    // await axios.post('http://localhost:5000/api/adusers', { name, email, password });
+  
   };
 
   const logout = () => {

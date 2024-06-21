@@ -1,30 +1,26 @@
 import styled from "styled-components";
 
-export const Conteneur = styled.section`
+const Conteneur = styled.section`
 padding: 2rem;
 background-color: #494C4F;
 `
-export const ContBrandName = styled.div`
+ const ContBrandName = styled.div`
 text-align: center;
 `
-export const BrandName = styled.div`
+ const BrandName = styled.div`
 font-size: 25px;
 margin-left: 2px;
 color: #FFFFFF;
 `
-export const Connect  = styled.p `
+ const Connect  = styled.p `
 text-align: center;
 color: #FFF;
 `
-export const ForgotMp = styled.div `
+ const ForgotMp = styled.div `
 text-align: center;
-`
-export const Erreur = styled.p `
-text-align: center;
-color: red;
 `
 
-export const StyledForm = styled.form`
+ const StyledForm = styled.form`
     padding: 20px;
     width: 30%;
     height: 100%;
@@ -33,36 +29,35 @@ export const StyledForm = styled.form`
     margin: 2rem auto;
 
 `
-export const Titre = styled.h1`
+ const Titre = styled.h1`
     font-size: 20px;
 `
-    
-export const StyledLabel = styled.label`
+ const StyledLabel = styled.label`
   display: block;
   margin-top: 15px;
   font-weight: semibold;
 
 `
-export const StyledInput = styled.input`
+ const StyledInput = styled.input`
   width: 90%;
   margin-top: 30px;
   border: none;
   border-bottom: 1px solid #ccc;
 `
-export const StyledCheckbox = styled.div `
+ const StyledCheckbox = styled.div `
     width: 90%;
     display: flex;
     align-items: center;
     gap: 5px;
     margin-bottom: 5px;
 `
-export const StyledForgetPw = styled.div `
+ const StyledForgetPw = styled.div `
     width: 90%;
     font-size: 16px;
     font-weight: 400;
     line-height:24px;
 `
-export const StyledButton = styled.button`
+ const StyledButton = styled.button`
   background-color: #474A4D;
   color: white;
   padding: 10px;
@@ -80,16 +75,35 @@ export const StyledButton = styled.button`
     opacity: 1.0;
   }
 `
-export const Link = ({ className, children }) => (
-  <>
-  <a className={className}>
-    {children}
-  </a>  
-  </>
-);
+function StyleForm({brandname,handleSubmit,title,styleforgotPw,Nom,handleChange,Email,motPass,confident,bEnvoi, forgotMp,compte,bredirect,emailName, emailvalue}) {
 
-export const StyledLink = styled(Link)`
-   color: #FCC100;
-      font-weight: bold;
-      text-align: center;
-    `;
+  return(
+    <Conteneur>
+    <ContBrandName> 
+    <BrandName>{brandname}</BrandName>
+      </ContBrandName>
+    <StyledForm  onSubmit={handleSubmit}>
+        <Titre>{title}</Titre>
+        <StyledForgetPw>{styleforgotPw}</StyledForgetPw>
+        <StyledLabel  >{Nom}</StyledLabel>
+        <StyledInput type="text"  onChange={handleChange}></StyledInput>
+        <StyledLabel>{Email}</StyledLabel>
+        <StyledInput type="email" onChange={handleChange} name={emailName} value={emailvalue}></StyledInput>
+        <StyledLabel>{motPass}</StyledLabel>
+        <StyledInput type="password"  onChange={handleChange}></StyledInput>
+        <StyledCheckbox>
+            <input type="checkbox" />
+            <StyledLabel>{confident}</StyledLabel>
+        </StyledCheckbox>
+        {/* {error && <Erreur>{error}</Erreur>} */}
+        <StyledButton type="submit">{bEnvoi}</StyledButton>
+    </StyledForm>
+    <ForgotMp>{forgotMp}</ForgotMp>
+    <Connect>{compte}
+       <Link href='/auth/login'> {bredirect}</Link> 
+    </Connect>
+  </Conteneur> 
+  )
+}
+
+export default StyleForm;
