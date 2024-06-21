@@ -1,6 +1,6 @@
 import "@/styles/globals.css";
 import React from 'react';
-import { AuthProvider } from '../pages/auth/context/auhContext';
+import { AuthProvider } from '../context/AuthContext';
 
 
 const App = ({ Component, pageProps }) => {

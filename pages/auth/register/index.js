@@ -1,7 +1,7 @@
 import React, {useState, useContext} from "react";
 import styled from 'styled-components';
 import Link from "next/link";
-import { AuthContext } from '../../auth/context/auhContext';
+import { AuthContext } from '../../../context/AuthContext';
 
 
 const Conteneur = styled.section`
