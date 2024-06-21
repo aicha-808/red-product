@@ -1,11 +1,15 @@
 import "@/styles/globals.css";
-import { AuthProvider } from "./auth/auhContext";
+import React from 'react';
+import { AuthProvider } from '../pages/auth/context/auhContext';
 
-export default function App({ Component, pageProps }) {
+
+const App = ({ Component, pageProps }) => {
   return (
     <AuthProvider>
-       <Component {...pageProps} />;
+      <Component {...pageProps} />
     </AuthProvider>
-  )
- 
-}
+  );
+};
+
+export default App;
+
