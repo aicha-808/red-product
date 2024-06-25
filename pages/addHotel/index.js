@@ -120,7 +120,7 @@ export default function AddHotel() {
 const handleSubmit = async(e) => {
     e.preventDefault();
     try {
-    const response = await axios.post('http://localhost:5000/api/addHotel', {
+    const response = await axios.get('http://localhost:5000/api/addHotel', {
         imgUrl,
         adresse,
         titre,

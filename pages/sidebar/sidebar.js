@@ -91,7 +91,7 @@ export default function Sidebar() {
             </ContDashboar>
             <ContListeHotel>
                 <FaHotel color="white"  size={17}  />
-                 <Link href='/listeHotels' className={styles.linkhotel}>Liste des hôtels</Link>
+                 <Link href='/listeHotel' className={styles.linkhotel}>Liste des hôtels</Link>
             </ContListeHotel>
             <ContProfile>
                 <ProfileImage>

@@ -113,7 +113,7 @@ export default function Login() {
             <StyledForm  onSubmit={handleSubmit}>
                 <Titre>Connectez-vous en tant que Admin</Titre>
                 <StyledLabel htmlFor="mail">E-mail</StyledLabel>
-                <StyledInput type="email"  name="email" value={email} onChange={handleChange} id="mail" placeholder="email"></StyledInput>
+                <StyledInput type="email"  name="email" value={email} onChange={handleChange} id="mail"></StyledInput>
                 <StyledLabel>Mot de passe</StyledLabel>
                 <StyledInput type="password"  name="password" value={password} onChange={handleChange} ></StyledInput>
                 <StyledCheckbox>
